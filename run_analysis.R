@@ -24,3 +24,5 @@ mergeddata <- cbind(subjects,ys,xs)
 # Extract only the measurements on the mean and standard deviation for each measurement
 filtercols <- grep("mean|std",colnames(xs))
 mean_stddevs <- mergeddata[,c(1,2,filtercols)]
+
+write.table(mean_stddevs,file="./UCI HAR Dataset/tidy_data.txt")
